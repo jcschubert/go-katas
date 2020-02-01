@@ -12,6 +12,9 @@ type SquareSumTestCase struct {
 func TestSquareSum(t *testing.T) {
 	runSquareSumTestCases(t, []SquareSumTestCase{
 		{[]int{1, 2}, 5},
+		{[]int{1, 2, 2}, 9},
+		{[]int{0, 3, 4, 5}, 50},
+		{[]int{}, 0},
 	})
 }
 
