@@ -17,6 +17,7 @@ func TestToWeirdCase(t *testing.T) {
 		{"aa", "Aa"},
 		{"ABC", "AbC"},
 		{"abc def", "AbC DeF"},
+		{"This is a test Looks like you passed", "ThIs Is A TeSt LoOkS LiKe YoU PaSsEd"},
 	}
 	runWeirdCaseTestCases(t, testCases)
 }
