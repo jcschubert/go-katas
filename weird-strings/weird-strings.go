@@ -9,8 +9,8 @@ import (
 // and all odd strings in each word lower cased
 func toWeirdCase(str string) string {
 	words := strings.Split(str, " ")
-	for i := 0; i < len(words); i++ {
 
+	for i := 0; i < len(words); i++ {
 		words[i] = wordToWeirdCase(words[i])
 	}
 
@@ -19,15 +19,18 @@ func toWeirdCase(str string) string {
 
 // wordToWeirdCase turns a single word to WeIrD CaSe
 func wordToWeirdCase(w string) string {
-	var chars []string = strings.Split(w, "")
+	chars := strings.Split(w, "")
 
 	for i := 0; i < len(chars); i++ {
-		if i%2 == 0 {
-			chars[i] = strings.ToUpper(chars[i])
-		} else {
-			chars[i] = strings.ToLower(chars[i])
-		}
+		chars[i] = transformChar(i)(chars[i])
 	}
 
 	return strings.Join(chars, "")
+}
+
+func transformChar(i int) func(string) string {
+	if i%2 == 0 {
+		return strings.ToUpper
+	}
+	return strings.ToLower
 }
