@@ -13,6 +13,7 @@ type TestCase struct {
 func TestSplitStrings(t *testing.T) {
 	cases := []TestCase{
 		{"ab", []string{"ab"}},
+		{"a", []string{"a_"}},
 	}
 	runCases(t, Solution, cases)
 }
