@@ -11,14 +11,13 @@ type TestCase struct {
 }
 
 func TestSplitStrings(t *testing.T) {
-	cases := []TestCase{
+	runCases(t, Solution, []TestCase{
 		{"ab", []string{"ab"}},
 		{"a", []string{"a_"}},
 		{"abcd", []string{"ab", "cd"}},
 		{"abcdef", []string{"ab", "cd", "ef"}},
 		{"abcde_", []string{"ab", "cd", "e_"}},
-	}
-	runCases(t, Solution, cases)
+	})
 }
 
 func runCases(t *testing.T, toTest func(string) []string, cases []TestCase) {
