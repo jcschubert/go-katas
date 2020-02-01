@@ -11,13 +11,13 @@ package splitstrings
 func Solution(str string) []string {
 	result := []string{}
 
-	item := str
-
-	if len(str) < 2 {
-		item = item + "_"
+	if len(str)%2 != 0 {
+		str = str + "_"
 	}
 
-	result = append(result, item)
+	for i := 0; i < len(str); i += 2 {
+		result = append(result, str[i:i+2])
+	}
 
 	return result
 }

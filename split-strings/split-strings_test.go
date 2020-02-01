@@ -14,6 +14,9 @@ func TestSplitStrings(t *testing.T) {
 	cases := []TestCase{
 		{"ab", []string{"ab"}},
 		{"a", []string{"a_"}},
+		{"abcd", []string{"ab", "cd"}},
+		{"abcdef", []string{"ab", "cd", "ef"}},
+		{"abcde_", []string{"ab", "cd", "e_"}},
 	}
 	runCases(t, Solution, cases)
 }
