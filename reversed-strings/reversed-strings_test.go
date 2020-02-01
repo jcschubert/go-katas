@@ -11,7 +11,9 @@ type WeirdCaseTestCase struct {
 
 func TestReversedString(t *testing.T) {
 	runReversedStringTestCases(t, Solution, []WeirdCaseTestCase{
+		{"", ""},
 		{"world", "dlrow"},
+		{"Hello", "olleH"},
 	})
 }
 
@@ -21,7 +23,7 @@ func runReversedStringTestCases(t *testing.T, toTest func(string) string, cases 
 			result := toTest(tc.input)
 
 			if result != tc.expected {
-				t.Logf("Given: %+v, expected: %q, got: %q", tc.input, tc.expected, result)
+				t.Logf("Given: %q, expected: %q, got: %q", tc.input, tc.expected, result)
 				t.Fail()
 			}
 		})
