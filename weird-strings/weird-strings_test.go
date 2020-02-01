@@ -14,6 +14,9 @@ func TestToWeirdCase(t *testing.T) {
 	testCases := []WeirdCaseTestCase{
 		{"a", "A"},
 		{"A", "A"},
+		{"aa", "Aa"},
+		{"ABC", "AbC"},
+		{"abc def", "AbC DeF"},
 	}
 	runWeirdCaseTestCases(t, testCases)
 }
