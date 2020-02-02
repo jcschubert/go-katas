@@ -22,10 +22,8 @@ func IsValidIP(ip string) bool {
 
 	for _, octet := range octets {
 		intVal, err := strconv.Atoi(octet)
-		if err != nil {
-			return false
-		}
-		if intVal < 0 || intVal > 255 {
+
+		if err != nil || intVal < 0 || intVal > 255 {
 			return false
 		}
 	}
