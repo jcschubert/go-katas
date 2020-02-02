@@ -8,8 +8,10 @@ type ipValidationCases struct {
 }
 
 func TestIpValidation(t *testing.T) {
-	runTests(t, is_valid_ip, []ipValidationCases{
+	runTests(t, IsValidIP, []ipValidationCases{
 		{"1.2.3.4", true},
+		{"192.168.0.7", true},
+		{"1.2.3", false},
 	})
 }
 
@@ -18,7 +20,7 @@ func runTests(t *testing.T, f func(string) bool, cases []ipValidationCases) {
 		for _, c := range cases {
 			result := f(c.input)
 			if result != c.expected {
-				t.Fatalf("Input: %v, expected %t, but got %t", c.input, c.expected, result)
+				t.Fatalf("Input: %q, expected %t, but got %t", c.input, c.expected, result)
 			}
 		}
 	})
