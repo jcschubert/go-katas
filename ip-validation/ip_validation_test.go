@@ -12,6 +12,10 @@ func TestIpValidation(t *testing.T) {
 		{"1.2.3.4", true},
 		{"192.168.0.7", true},
 		{"1.2.3", false},
+		{"123.45.67.89", true},
+		{"1.2.3.4.5", false},
+		{"123.456.78.90", false},
+		{"123.045.078.089", false},
 	})
 }
 
