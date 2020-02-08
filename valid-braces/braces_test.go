@@ -18,13 +18,15 @@ func TestValidBraces(t *testing.T) {
 			"[]", true},
 		{"A simple set of curly braces returns true.",
 			"{}", true},
+		{"Unmatched pairs of braces return false",
+			"(}", false},
 	}
 
 	for _, c := range cases {
 		t.Run(c.desc, func(t *testing.T) {
 			got := ValidBraces(c.stringOfBraces)
 			if got != c.expected {
-				t.Fatalf("ValidBraces(%s) should return %t, returned %t",
+				t.Fatalf("ValidBraces(%q) should return %t, returned %t",
 					c.stringOfBraces, c.expected, got)
 			}
 		})
