@@ -14,6 +14,10 @@ func TestValidBraces(t *testing.T) {
 			"()", true},
 		{"An open parenthese that is not closed return false.",
 			"(", false},
+		{"A simple set of brackets returns true.",
+			"[]", true},
+		{"A simple set of curly braces returns true.",
+			"{}", true},
 	}
 
 	for _, c := range cases {
