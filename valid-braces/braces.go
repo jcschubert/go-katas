@@ -41,17 +41,17 @@ func ValidBraces(s string) bool {
 	tokens := strings.Split(s, "")
 	stack := stack{}
 
-	for _, t := range tokens {
-		if strings.Contains(openingBraces, t) {
-			stack = stack.Push(t)
+	for _, token := range tokens {
+		if strings.Contains(openingBraces, token) {
+			stack = stack.Push(token)
 		}
-		if strings.Contains(closingBraces, t) {
+		if strings.Contains(closingBraces, token) {
 			if !stack.Has() {
 				return false
 			}
 
-			lastT := stack.Peek()
-			if matches[t] == lastT {
+			lastToken := stack.Peek()
+			if matches[token] == lastToken {
 				stack, _ = stack.Pop()
 			}
 		}

@@ -20,6 +20,8 @@ func TestValidBraces(t *testing.T) {
 			"{}", true},
 		{"Unmatched pairs of braces return false",
 			"(}", false},
+		{"Several pairs of braces return true",
+			"()()()", true},
 	}
 
 	for _, c := range cases {
