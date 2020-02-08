@@ -10,8 +10,10 @@ func TestValidBraces(t *testing.T) {
 	}{
 		{"An empty string containing no braces is valid.",
 			"", true},
-		{"A simple set of parens returns true.",
+		{"A simple set of parentheses returns true.",
 			"()", true},
+		{"An open parenthese that is not closed return false.",
+			"(", false},
 	}
 
 	for _, c := range cases {
