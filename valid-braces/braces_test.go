@@ -26,6 +26,8 @@ func TestValidBraces(t *testing.T) {
 			"()[]{}", true},
 		{"Several nested pairs return true",
 			"((())())", true},
+		{"Several different nested pairs return true",
+			"()[{()[]}{}]", true},
 	}
 
 	for _, c := range cases {
