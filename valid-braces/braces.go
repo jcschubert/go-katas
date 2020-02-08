@@ -53,6 +53,8 @@ func ValidBraces(s string) bool {
 			lastToken := stack.Peek()
 			if matches[token] == lastToken {
 				stack, _ = stack.Pop()
+			} else {
+				return false
 			}
 		}
 	}
