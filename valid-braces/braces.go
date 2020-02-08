@@ -6,5 +6,8 @@ func ValidBraces(s string) bool {
 	if s == "" {
 		return true
 	}
+	if s == "()" {
+		return true
+	}
 	return false
 }
