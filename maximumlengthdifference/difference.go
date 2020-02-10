@@ -9,7 +9,7 @@ func MxDifLg(a1 []string, a2 []string) int {
 		return -1
 	}
 
-	max, min := 0.0, 0.0
+	max, min := 0.0, math.MaxFloat64
 
 	for _, s := range strings {
 		len := float64(len(s))
