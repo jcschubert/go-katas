@@ -1,7 +1,5 @@
 package speedcontrol
 
-import "math"
-
 // Gps calculates the floor of the *maximum* average speed
 // per hour for of the distance covered at that particular
 // amount of seconds.
@@ -11,7 +9,9 @@ func Gps(s int, distances []float64) int {
 	for i := 1; i < len(distances); i++ {
 		delta := distances[i] - distances[i-1]
 		avgSpeed = (3600 * delta) / interval
-		max = math.Max(max, avgSpeed)
+		if avgSpeed > max {
+			max = avgSpeed
+		}
 	}
 
 	return int(max)
