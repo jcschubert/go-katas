@@ -6,10 +6,6 @@ import "math"
 // per hour for of the distance covered at that particular
 // amount of seconds.
 func Gps(s int, x []float64) int {
-	if len(x) < 2 {
-		return 0
-	}
-
 	max := 0.0
 	for i := 1; i < len(x); i++ {
 		d := x[i] - x[i-1]
