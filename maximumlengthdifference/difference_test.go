@@ -14,6 +14,11 @@ func TestMaxLengthDifference(t *testing.T) {
 			[]string{"cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"},
 			13,
 		},
+		{
+			[]string{"ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"},
+			[]string{"bbbaaayddqbbrrrv"},
+			10,
+		},
 	}
 
 	const msg string = "MxDifLg(%v, %v) should return %d, but returned %d instead."
