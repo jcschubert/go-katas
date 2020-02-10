@@ -11,7 +11,7 @@ func Gps(s int, x []float64) int {
 	}
 
 	max := 0.0
-	for i := 1; i < len(x)-1; i++ {
+	for i := 1; i < len(x); i++ {
 		d := x[i] - x[i-1]
 		avgSpeed := math.Floor((3600 * d) / float64(s))
 		if avgSpeed > max {
