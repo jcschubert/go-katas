@@ -1,18 +1,13 @@
 package speedcontrol
 
-// Gps calculates the floor of the *maximum* average speed
-// per hour for of the distance covered at that particular
-// amount of seconds.
-func Gps(s int, distances []float64) int {
-	avgSpeed, max, interval := 0.0, 0.0, float64(s)
+func Gps(s int, dists []float64) int {
+	interval, maxSpeed := float64(s), 0.0
 
-	for i := 1; i < len(distances); i++ {
-		delta := distances[i] - distances[i-1]
-		avgSpeed = (3600 * delta) / interval
-		if avgSpeed > max {
-			max = avgSpeed
+	for i := 1; i < len(dists); i++ {
+		avgSpeed := (dists[i] - dists[i-1]) * 3600 / interval
+		if avgSpeed > maxSpeed {
+			maxSpeed = avgSpeed
 		}
 	}
-
-	return int(max)
+	return int(maxSpeed)
 }
