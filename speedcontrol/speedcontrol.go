@@ -10,7 +10,7 @@ func Gps(s int, distances []float64) int {
 
 	for i := 1; i < len(distances); i++ {
 		delta := distances[i] - distances[i-1]
-		avgSpeed = math.Floor((3600 * delta) / interval)
+		avgSpeed = (3600 * delta) / interval
 		max = math.Max(max, avgSpeed)
 	}
 
